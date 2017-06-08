@@ -34,8 +34,7 @@
 }
 
 .jfx-decorator {
-    /*-fx-decorator-color: RED;*/
-    -fx-decorator-color: BLACK;
+    -fx-decorator-color: BLUE;
 }
 
 .jfx-decorator .jfx-decorator-buttons-container {

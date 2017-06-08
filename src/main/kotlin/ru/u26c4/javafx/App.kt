@@ -1,19 +1,16 @@
 package ru.u26c4.javafx
 
-import com.jfoenix.controls.JFXDecorator
-import io.datafx.controller.flow.container.DefaultFlowContainer
 import javafx.application.Application
 import javafx.scene.Scene
-import javafx.scene.layout.StackPane
 import javafx.stage.Stage
 
 class App : Application() {
 
     override fun start(stage: Stage) {
-        val decorator = JFXDecorator(stage, DefaultFlowContainer(StackPane()).view)
-        decorator.isCustomMaximize = true
+        createContext(stage)
 
-        first(decorator)
+        decorator?.isCustomMaximize = true
+        decorator?.setContent(first())
 
         val scene = Scene(decorator, 400.0, 450.0)
         scene.stylesheets.add(App::class.java.getResource("/css/jfoenix-components.css").toExternalForm())

@@ -1,22 +1,20 @@
 package ru.u26c4.javafx
 
 import com.jfoenix.controls.JFXButton
-import com.jfoenix.controls.JFXDecorator
 import de.jensd.fx.glyphs.GlyphsDude
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon
-import javafx.scene.control.Label
-import javafx.scene.layout.StackPane
+import javafx.scene.text.Text
 
-fun first(decorator: JFXDecorator) {
-    val btn = JFXButton("RAISED BUTTON")
+fun first(): JFXButton {
+    val btn = JFXButton("CLICK ME!")
     btn.styleClass.add("button-raised")
 
     btn.setOnAction {
-        second(decorator)
+        decorator?.setContent(second())
     }
-    decorator.setContent(btn)
+    return btn
 }
 
-fun second(decorator: JFXDecorator) {
-    decorator.setContent(GlyphsDude.createIcon(FontAwesomeIcon.THUMBS_UP, "10em"))
+fun second(): Text {
+    return GlyphsDude.createIcon(FontAwesomeIcon.THUMBS_UP, "10em")
 }
